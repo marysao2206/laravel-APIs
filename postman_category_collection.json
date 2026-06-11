@@ -1,0 +1,87 @@
+{
+  "info": {
+    "_postman_id": "b1c2d3e4-fake-id-0000-000000000000",
+    "name": "Category API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "List Categories",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/categories",
+          "host": ["{{baseUrl}}"],
+          "path": ["api","categories"]
+        }
+      }
+    },
+    {
+      "name": "Add Category",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Mobile\",\n  \"description\": \"mobile description\",\n  \"is_active\": true\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/categories",
+          "host": ["{{baseUrl}}"],
+          "path": ["api","categories"]
+        }
+      }
+    },
+    {
+      "name": "Get Category",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/categories/:id",
+          "host": ["{{baseUrl}}"],
+          "path": ["api","categories",":id"]
+        }
+      }
+    },
+    {
+      "name": "Update Category",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Mobile Updated\",\n  \"description\": \"updated description\",\n  \"is_active\": false\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/categories/:id",
+          "host": ["{{baseUrl}}"],
+          "path": ["api","categories",":id"]
+        }
+      }
+    },
+    {
+      "name": "Delete Category",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/categories/:id",
+          "host": ["{{baseUrl}}"],
+          "path": ["api","categories",":id"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8000"
+    }
+  ]
+}
